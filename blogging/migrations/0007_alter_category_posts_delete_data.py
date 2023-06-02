@@ -10,7 +10,11 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.RemoveField(
+            model_name='category',
+            name='posts',
+       ),
+        migrations.AddField(
             model_name='category',
             name='posts',
             field=models.ManyToManyField(blank=True, related_name='categories', to='blogging.post'),
