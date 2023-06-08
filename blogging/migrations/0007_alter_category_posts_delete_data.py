@@ -4,22 +4,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('blogging', '0006_alter_data_options_remove_category_post_and_more'),
+        ("blogging", "0006_alter_data_options_remove_category_post_and_more"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='category',
-            name='posts',
-       ),
+            model_name="category",
+            name="posts",
+        ),
         migrations.AddField(
-            model_name='category',
-            name='posts',
-            field=models.ManyToManyField(blank=True, related_name='categories', to='blogging.post'),
+            model_name="category",
+            name="posts",
+            field=models.ManyToManyField(
+                blank=True, related_name="categories", to="blogging.post"
+            ),
         ),
         migrations.DeleteModel(
-            name='Data',
+            name="Data",
         ),
     ]

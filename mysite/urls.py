@@ -18,11 +18,10 @@ from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
-    path('', include('blogging.urls')),  # <- already there
-    path('polling/', include('polling.urls')),  # <- already there
-    path('admin/', admin.site.urls),  # <- already there
-    path('login/', LoginView.as_view(template_name='login.html'), name="login"),
-    path('logout/', LogoutView.as_view(next_page='/'), name="logout"),
-
+    path("", include("blogging.urls")),  # <- already there
+    path("polling/", include("polling.urls")),  # <- already there
+    path("admin/", admin.site.urls),  # <- already there
+    path("login/", LoginView.as_view(template_name="login.html"), name="login"),
+    path("logout/", LogoutView.as_view(next_page="/"), name="logout"),
 ]
-#path('blogging/', include('blogging.urls')),
+# path('blogging/', include('blogging.urls')),
